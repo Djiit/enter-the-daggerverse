@@ -14,3 +14,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Publish
+        uses: dagger/dagger-for-github@v6
+        with:
+          version: "latest"
+          workdir: "hello"
+          verb: call
+          args: publish --source=.
